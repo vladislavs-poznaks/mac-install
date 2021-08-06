@@ -91,6 +91,8 @@ brew_cask_install "phpstorm"
 
 brew_cask_install "webtorrent"
 
+brew_cask_install "spotify"
+
 brew_cask_install "google-chrome" && open -a "Google Chrome" --args --make-default-browser
 
 echo "Installation complete 💪"
