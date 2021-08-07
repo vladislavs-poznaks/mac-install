@@ -61,13 +61,23 @@ install_git_and_vcprompt()
 install_bash_profile()
 {
   if [ -d "~/Code" ]; then
-   echo "directory Code already exists..."
+   echo "directory Code already exists, proceeding..."
   else
    mkdir ~/Code
   fi
 
-  git clone https://github.com/vladislavs-poznaks/dotfiles.git ~/Code/dotfiles
-  cp ~/Code/dotfiles/.bash_profile ~/.bash_profile
+  wget https://raw.githubusercontent.com/vladislavs-poznaks/dotfiles/master/.bash_profile -P ~/
+}
+
+install_vim_profile()
+{
+  if [ -d "~/.vim" ]; then
+    echo "directory .vim already exists, proceeding..."
+  else
+    mkdir ~/.vim
+  fi
+
+  wget https://raw.githubusercontent.com/vladislavs-poznaks/vim-atom-dark/master/colors/atom-dark-256.vim -P ~/ 
 }
 
 install_docker_and_docker_compose()
@@ -86,6 +96,8 @@ install_bash
 install_git_and_vcprompt
 
 install_bash_profile
+
+install_vim_profile
 
 brew_cask_install "phpstorm"
 
