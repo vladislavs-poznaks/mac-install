@@ -66,7 +66,7 @@ install_bash_profile()
    mkdir ~/Code
   fi
 
-  wget https://raw.githubusercontent.com/vladislavs-poznaks/dotfiles/master/.bash_profile -P ~/
+  wget https://raw.githubusercontent.com/vladislavs-poznaks/dotfiles/master/.bash_profile -P ~/ -O .bash_profile
 }
 
 install_vim_profile()
@@ -77,15 +77,20 @@ install_vim_profile()
     mkdir ~/.vim
   fi
 
-  wget https://raw.githubusercontent.com/vladislavs-poznaks/vim-atom-dark/master/colors/atom-dark-256.vim -P ~/ 
+  wget https://raw.githubusercontent.com/vladislavs-poznaks/vim-atom-dark/master/colors/atom-dark-256.vim -P ~/.vim -O atom-dark-256.vim 
+  wget https://raw.githubusercontent.com/vladislavs-poznaks/dotfiles/master/.vimrc -P ~/ -O .vimrc
 }
 
 install_docker_and_docker_compose()
 {
-  brew_cask_install "docker" 
+  brew_cask_install "homebrew/cask/docker" 
   brew_cask_install "docker-compose"
   { docker --version && print "\n" && docker-compose --version; } | cowsay
 }
+
+brew_install "wget"
+
+brew_install "gh"
 
 install_iterm
 
