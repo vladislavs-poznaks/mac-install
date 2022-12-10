@@ -29,6 +29,10 @@ brew_cask_install()
   fi
 }
 
+##########################################
+# Custom installation definitions        #
+##########################################
+
 install_cowsay_and_fortune()
 {
   brew_install "cowsay"
