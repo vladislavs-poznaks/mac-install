@@ -29,11 +29,6 @@ brew_cask_install()
   fi
 }
 
-install_iterm()
-{
-  brew_cask_install "iterm2"
-}
-
 install_cowsay_and_fortune()
 {
   brew_install "cowsay"
@@ -101,7 +96,7 @@ brew_install "gh"
 
 brew_install "helm"
 
-install_iterm
+brew_cask_install "iterm2"
 
 install_cowsay_and_fortune
 
