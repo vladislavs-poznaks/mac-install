@@ -3,7 +3,10 @@
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew update
 
-# Installation definitions
+##########################################
+# Brew installation definitions          #
+##########################################
+
 brew_install()
 {
   echo "\nInstalling $1..."
@@ -11,7 +14,7 @@ brew_install()
   if brew list $1 &>/dev/null; then 
     echo "${1} already installled 😎";
   else
-    brew install $1 
+    brew install $1
   fi
 }
 
@@ -88,9 +91,15 @@ install_docker_and_docker_compose()
   { docker --version && print "\n" && docker-compose --version; } | cowsay
 }
 
+##########################################
+# Installations                          #
+##########################################
+
 brew_install "wget"
 
 brew_install "gh"
+
+brew_install "helm"
 
 install_iterm
 
